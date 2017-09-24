@@ -28,7 +28,7 @@ export default {
             },
             {
                 test: /\.(png|jpg|gif|md)$/,
-                use: ['file-loader?limit=8192&name=images/[md5:hash:base64:10].[ext]']
+                use: ['file-loader?limit=8192&name=images/[hash].[ext]']
             }
         ]
     },

@@ -19,7 +19,8 @@ const proWebpack = {
                             loader: 'postcss-loader',
                             options: { plugins() { return [require('autoprefixer')()] } }
                         },
-                    ]
+                    ],
+                    publicPath:'../'
                 }) //单独提取出来css  如果css太多打包到js里 js会很大 建议生产环境使用 提取出来的css 无法热更新
             }
         ]

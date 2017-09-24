@@ -1,9 +1,11 @@
-import webpack from 'webpack'
+import webpack from 'webpack';
+import path from 'path';
 import Merge from 'webpack-merge';
 import commonWebpack from './webpack.common.babel.js';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
 
-commonWebpack.module.rules.splice(1,1);
+commonWebpack.module.rules.splice(1, 1);
 
 const proWebpack = {
     module: {
@@ -35,6 +37,12 @@ const proWebpack = {
             allChunks: true,
             disable: false
         }),
+        new CleanWebpackPlugin(
+            ['js', 'imgs'], {
+                root: path.resolve(__dirname, '../dist'),
+                verbose: true,
+                exclude: ['css', 'favicon.ico']
+            }),
     ]
 }
 

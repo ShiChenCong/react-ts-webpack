@@ -9,7 +9,8 @@ const devWebpack = {
         hot: true,
         open : true,
         port: 9000,
-        contentBase: "dist",
+        publicPath:'/',
+        contentBase: 'dist',        
         historyApiFallback: true,//搭配browserHistory
     },
     plugins: [

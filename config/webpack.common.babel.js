@@ -10,8 +10,8 @@ export default {
         lib: ['react', 'react-dom']// 单独提出框架文件，加快编译速度，这部分不会改变，所以没必要每次都重新编译
     },
     output: {
-        publicPath: './',
-        path: path.join(dir, 'dist'),//输出文件的路径
+        publicPath: './',//会加在静态资源访问路径的前面
+        path: path.join(dir, 'dist'),//输出文件的路径 打包到dist文件夹
         filename: 'js/[name].[hash].js',//entry里有几个入口文件，这里就有几个js
         chunkFilename: 'js/[name].[chunkhash].js',//按需加载的js
     },
@@ -28,7 +28,7 @@ export default {
             },
             {
                 test: /\.(png|jpg|gif|md)$/,
-                use: ['file-loader?limit=8192&name=imgs/[base64].[ext]']
+                use: ['file-loader?limit=8192&name=images/[md5:hash:base64:10].[ext]']
             }
         ]
     },

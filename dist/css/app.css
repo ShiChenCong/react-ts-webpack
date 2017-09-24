@@ -5,5 +5,8 @@ body {
   display: -ms-flexbox;
   display: flex;
 }
+#app p {
+  background: url('/src/images/cat.png');
+}
 
 /*# sourceMappingURL=app.css.map*/

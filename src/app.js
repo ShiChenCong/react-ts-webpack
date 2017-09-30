@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import './style/index.less';
+import './assets/style/index.less';
 
 ReactDOM.render(
     <div>22</div>

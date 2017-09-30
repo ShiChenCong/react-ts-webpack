@@ -6,7 +6,7 @@ const dir = path.resolve(__dirname, '../');
 
 export default {
     entry: {
-        app: path.resolve(dir, 'src/index.js'),//入口文件
+        app: path.resolve(dir, 'src/app.js'),//入口文件
         lib: ['react', 'react-dom']// 单独提出框架文件，加快编译速度，这部分不会改变，所以没必要每次都重新编译
     },
     output: {
@@ -37,7 +37,7 @@ export default {
     },
     plugins: [
         new HtmlWebpackPlugin({//把输出文件加载到html文件里面去
-            template: './src/index.html'
+            template: './index.html'
         })
     ]
 }

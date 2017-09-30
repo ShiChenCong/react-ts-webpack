@@ -5,7 +5,7 @@ import commonWebpack from './webpack.common.babel.js';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
-commonWebpack.module.rules.splice(1, 1);
+// commonWebpack.module.rules.splice(1, 1);
 
 const proWebpack = {
     module: {
@@ -32,13 +32,19 @@ const proWebpack = {
                 NODE_ENV: JSON.stringify('production')
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({ sourceMap: true }),//压缩代码
+        new webpack.optimize.UglifyJsPlugin({//压缩代码，去掉警告和log
+             sourceMap: true,
+             compress: {
+                warnings: false,
+                drop_console: true
+              }
+            }),//压缩代码
         new ExtractTextPlugin({//提取出css，配合上面rules中的css loader配置
             filename: 'css/[name].css',
             allChunks: true,
             disable: false
         }),
-        new CleanWebpackPlugin(
+        new CleanWebpackPlugin( //每次打包，删除之前生成的文件
             ['js', 'imgs'], {
                 root: path.resolve(__dirname, '../dist'),
                 verbose: true,
@@ -47,4 +53,4 @@ const proWebpack = {
     ]
 }
 
-export default Merge(proWebpack, commonWebpack);
+export default Merge.smart(commonWebpack, proWebpack);

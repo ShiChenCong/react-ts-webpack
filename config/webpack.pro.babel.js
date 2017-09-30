@@ -5,7 +5,6 @@ import commonWebpack from './webpack.common.babel.js';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
-// commonWebpack.module.rules.splice(1, 1);
 
 const proWebpack = {
     module: {

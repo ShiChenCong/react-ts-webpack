@@ -12,6 +12,13 @@ const devWebpack = {
         publicPath:'/',
         contentBase: 'dist',        
         historyApiFallback: true,//搭配browserHistory
+        proxy: {
+            '/api':{
+                target:'https://api.douban.com/',
+                pathRewrite: {'^/api' : ''},
+                changeOrigin: true,
+            }
+        }
     },
     plugins: [
         new webpack.DefinePlugin({

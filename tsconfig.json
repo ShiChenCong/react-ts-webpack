@@ -9,8 +9,8 @@
         "lib": ["es6", "dom"], // 编译过程中需要引入的库文件的列表
         "allowJs": true, //允许编译javascript文件。
         "moduleResolution": "node",
-        // "experimentalDecorators": true,
-        // "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
         "allowSyntheticDefaultImports": true,
         "reactNamespace": "React"//让tsx 文件可以找到react 才能 import react
     },

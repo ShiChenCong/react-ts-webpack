@@ -4,7 +4,7 @@ import './assets/style/index.less';
 import Test from './test';
 
 ReactDOM.render(
-    <Test />
+    <Test age="11"/>
     , document.getElementById('app') 
 )
 if (module.hot) { module.hot.accept(); }

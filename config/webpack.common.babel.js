@@ -24,7 +24,7 @@ export default {
                 use: [{ loader: 'babel-loader' }]
             },
             {
-                test: /\.tsx?$/,
+                test: /\.tsx?$/, 
                 use: [ 'babel-loader','ts-loader']
             },
             {
@@ -48,7 +48,7 @@ export default {
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.less', '.css', '.ts', '.tsx']//引入这些文件时可以省略后缀名
+        extensions: ['.js', '.jsx', '.less', '.css', '.ts', '.tsx', '.json']//引入这些文件时可以省略后缀名
     },
     plugins: [
         new HtmlWebpackPlugin({//把输出文件加载到html文件里面去

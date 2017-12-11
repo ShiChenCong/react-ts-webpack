@@ -12,3 +12,4 @@ git clone之后进行以下操作
 + npm uninstall taco --save === yarn remove taco
 + npm install taco --save-dev === yarn add taco --dev
 
+

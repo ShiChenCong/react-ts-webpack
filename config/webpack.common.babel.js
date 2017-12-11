@@ -58,6 +58,7 @@ export default {
             filename: 'css/[name].css',
             allChunks: true,
             disable: false
-        })
+        }),
+        new webpack.optimize.CommonsChunkPlugin("vender")//提取不用热更新的代码，比如库
     ]
 }

@@ -1,10 +1,7 @@
 import webpack from 'webpack'
 import Merge from 'webpack-merge';
-import Dashboard from 'webpack-dashboard';
-import DashboardPlugin from 'webpack-dashboard/plugin';
 import commonWebpack from './webpack.common.babel.js';
 
-const  dashboard = new Dashboard();
 const devWebpack = {
     devtool: 'eval-source-map',
     devServer: {
@@ -12,17 +9,9 @@ const devWebpack = {
         hot: true,
         open : true,
         port: 9000,
-        quiet: true,//启动dashboard 去掉多余日志
         publicPath:'/',
         contentBase: 'dist',        
         historyApiFallback: true,//搭配browserHistory
-        proxy: {
-            '/api':{
-                target:'https://api.douban.com/',
-                pathRewrite: {'^/api' : ''},
-                changeOrigin: true,
-            }
-        }
     },
     plugins: [
         new webpack.DefinePlugin({
@@ -32,8 +21,6 @@ const devWebpack = {
         }),
         // 热加载插件 配合webpack-dev-server
         new webpack.HotModuleReplacementPlugin(),
-        //dashboard
-        new DashboardPlugin(dashboard.setData)
     ]
 }
 

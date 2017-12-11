@@ -1,9 +1,12 @@
-declare namespace ScoreAnalysis{
+declare namespace index{
     interface info {
         name: string;
         age: number;
     }
+    interface Window {
+        __REDUX_DEVTOOLS_EXTENSION__: any;
+    }
 }
-declare module 'ScoreAnalysis' {//import ScoreAnalysis from 'ScoreAnalysis'
-    export = ScoreAnalysis; //import info = ScoreAnalysis.info;
+declare module 'index' {//import ScoreAnalysis from 'ScoreAnalysis'
+    export = index; //import info = ScoreAnalysis.info;
 }

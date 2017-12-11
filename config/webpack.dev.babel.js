@@ -3,7 +3,7 @@ import Merge from 'webpack-merge';
 import commonWebpack from './webpack.common.babel.js';
 
 const devWebpack = {
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     devServer: {
         inline: true,
         hot: true,

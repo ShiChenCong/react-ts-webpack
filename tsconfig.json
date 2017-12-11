@@ -16,7 +16,6 @@
     },
 
     "exclude": [//不包含的编译目录
-        "node_modules",
-        "typings"
+        "node_modules"
     ]
 }

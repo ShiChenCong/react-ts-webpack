@@ -4,6 +4,6 @@ declare namespace ScoreAnalysis{
         age: number;
     }
 }
-declare module 'ScoreAnalysis' {
-    export = ScoreAnalysis;
+declare module 'ScoreAnalysis' {//import ScoreAnalysis from 'ScoreAnalysis'
+    export = ScoreAnalysis; //import info = ScoreAnalysis.info;
 }

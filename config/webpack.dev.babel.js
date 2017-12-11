@@ -1,10 +1,10 @@
 import webpack from 'webpack'
 import Merge from 'webpack-merge';
-// import Dashboard from 'webpack-dashboard';
-// import DashboardPlugin from 'webpack-dashboard/plugin';
+import Dashboard from 'webpack-dashboard';
+import DashboardPlugin from 'webpack-dashboard/plugin';
 import commonWebpack from './webpack.common.babel.js';
 
-// const  dashboard = new Dashboard();
+const  dashboard = new Dashboard();
 const devWebpack = {
     devtool: 'eval-source-map',
     devServer: {
@@ -26,8 +26,7 @@ const devWebpack = {
         // 热加载插件 配合webpack-dev-server
         new webpack.HotModuleReplacementPlugin(),
         //dashboard
-        // new DashboardPlugin(dashboard.setData),
-        new webpack.optimize.CommonsChunkPlugin('vendor')
+        new DashboardPlugin(dashboard.setData)
     ]
 }
 

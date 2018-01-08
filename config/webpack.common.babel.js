@@ -24,10 +24,6 @@ export default {
                 use: [{ loader: 'babel-loader' }]
             },
             {
-                test: /\.tsx?$/, 
-                use: [ 'babel-loader','ts-loader']
-            },
-            {
                 test: /\.css|less$/,
                 // use: ['style-loader','css-loader', 'less-loader']
                 use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({//提取css的同时 支持hot-reload
